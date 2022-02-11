@@ -1,0 +1,261 @@
+/* ===== RESET ===== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: 'Open Sans', sans-serif;  
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+   
+    margin-top: 83px;
+}
+/* ===== VARIAVEIS ===== */
+:root{
+    --Fundo: #222323;
+    --Branco: #fff;
+    --Preto: #000;
+    --Roxo: #a238ff;
+    --Azul: #29288f;
+    
+}
+/* ===== CABECALHO ===== */
+header{
+   width: 100%;
+   background: linear-gradient(to right, var(--Roxo), var(--Azul));
+   display: flex;    
+   justify-content: space-between;   
+   align-items: center;
+   padding: 20px; 
+   position: fixed;
+   top: 0;    
+   z-index: 1;   
+}
+header .logo{
+    display: flex;
+    align-items: center;   
+}
+header .logo img{
+    width: 50px;
+}
+header .logo a{
+    color: var(--Branco);
+    font-weight: 600;
+    font-size: 25px;
+}
+header .logo a:nth-child(2){
+    position: relative;
+    top: -2px;
+}
+header nav ul{
+    display: flex;
+    align-items: center;
+}
+header nav ul li a{
+    color: var(--Branco);
+    transition: .3s ease-in;
+}
+header nav ul li + li{
+    margin-left: 30px;
+}
+header nav ul li:nth-child(2) span{
+    position: relative;
+    top: -2px;
+    left: 10px;
+}
+header nav ul li:nth-child(4) a{
+    background: var(--Roxo);
+    box-shadow: 0px 0px 3px 2px var(--Roxo);
+    padding: 10px 30px;
+    position: relative;
+    border-radius: 30px;
+    transition: .5s ease-in;
+}
+header nav ul li:nth-child(4) a:hover{
+    box-shadow: 0px 0px 5px 2px var(--Roxo);
+    background: var(--Branco);
+    color: var(--Roxo)
+}
+header nav ul li i{
+    font-size: 22px;
+    transition: .3s ease-in;
+}
+header nav ul li a span{
+    transition: .3s ease-in;
+}
+header nav ul li i:hover{
+    color: var(--Roxo);
+}
+header nav ul li a:hover{
+    color: var(--Roxo);
+}
+}
+header input:checked ~ label .btn-menu{
+    transform: rotate(120deg);
+}
+/* ===== MENU HAMBURGUER ===== */
+input{
+    display: none;
+}
+input:checked ~ label .btn-menu{
+    border: transparent;
+}
+header .btn-menu{
+    border-top: 3px solid var(--Branco);
+    width: 24px;
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+label {
+    display: none !important;
+}
+input:checked ~ label .btn-menu:after{
+    transform: rotate(-45deg);
+    position: relative;
+    top: -7px;
+}
+input:checked ~ label .btn-menu:before{
+    transform: rotate(45deg);
+}
+header .btn-menu:after{
+    display: block;
+    transition: .2s ease-in;
+    content: '';
+    margin-top: 4px;
+    border-top: 3px solid var(--Branco);
+    width: 24px;
+    cursor: pointer;               
+}
+header .btn-menu:before{
+    display: block;
+    content: '';
+    margin-top: 4px;
+    border-top: 3px solid var(--Branco);    
+    width: 24px;
+    cursor: pointer; 
+    transition: .2s ease-in;              
+}
+/* ===== CONTEUDO PRINCIPAL ===== */
+main .fundo{
+    background: url(/img/background.png)no-repeat center center;
+    width: 100%; 
+    height: 100vh;
+    background-size:cover;
+    overflow: hidden;   
+}
+main .trackmate-xe{
+    display: flex;
+    align-items: center;
+    margin: 80px auto;
+}
+main .trackmate-xe .inf{
+    width: 800px;
+    position: relative;
+    margin-left: 100px;
+}
+main .trackmate-xe .inf span{
+    display: block;
+    color: var(--Branco);
+    margin-top: 10px;
+}
+main .trackmate-xe .inf span:nth-child(1), .inf span:nth-child(3){
+    font-size: 25px;
+}
+main .trackmate-xe .inf span:nth-child(2){
+    font-size: 6vw;
+}
+main .trackmate-xe .imagem{
+    padding: 10px;
+    
+}
+main .trackmate-xe .imagem img{
+    width: 100%;
+    min-width: 100px;
+}
+main .trackmate-xe .inf a{
+    color: var(--Branco);
+    box-shadow: 0px 0px 3px 2px var(--Roxo);
+    background: var(--Roxo);
+    padding: 10px 30px;
+    position: relative;
+    border-radius: 30px;
+    transition: .5s ease-in;
+    position: relative;
+    top: 45px;
+}
+main .trackmate-xe .inf a:hover{
+    box-shadow: 0px 0px 5px 2px var(--Roxo);
+    background: var(--Branco);
+    color: var(--Roxo)
+}
+/* ===== MEDIA QUERY ===== */
+@media (max-width: 850px){
+    main .fundo{
+        height: 120vh;
+    }
+    main .trackmate-xe{
+       flex-direction: column !important;
+    }
+    header .logo{
+        display: flex;
+        align-items: center;
+       
+    }
+    header nav{
+        position: absolute; 
+        background: linear-gradient(to right, var(--Roxo), var(--Azul));
+        top: 83px;
+        right: 0;
+        display: block;
+        width: 100%;
+        height: 0;
+        transition: .6s;
+        visibility: hidden;
+        overflow: hidden;
+    }
+    .active{
+        height: 45vh;
+        visibility: visible;
+    }
+    header nav ul{
+        align-items: center;
+        gap: 20px;
+        margin-top: 50px;
+        justify-content: center;
+    }
+    header nav ul li i:hover{
+    color: var(--Azul);
+    }
+    header nav ul li a:hover{
+        color: var(--Azul);
+    }
+    label{
+        display: block !important;
+    }
+    main .trackmate-xe .imagem img{
+        width: 100%;
+        max-width: 400px;
+    }
+    main .trackmate-xe .imagem {
+        margin: 100px auto;
+        
+    }
+    main .trackmate-xe .inf{
+        width: 100%;
+        position: static;
+        text-align: center;
+        margin: 0px auto;            
+    }
+    main .trackmate-xe .inf span:nth-child(2){
+        font-size: 35px;
+    }
+}
